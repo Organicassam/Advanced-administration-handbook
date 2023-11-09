@@ -194,8 +194,8 @@ White screens and PHP error messages are not displayed to users any more. But in
 
 ```
 define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_DISPLAY', true );
+define( 'WP_DEBUG', false);
+define( 'WP_DEBUG_DISPLAY', false );
 ```
 
 ### WP_DEBUG {#wp-debug}
@@ -204,7 +204,7 @@ The [WP_DEBUG](https://developer.wordpress.org/advanced-administration/debug/deb
 
 ```
 define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false);
 ```
 
 [Database errors are printed only if WP_DEBUG is set to true](https://trac.wordpress.org/ticket/5473). Database errors are handled by the [wpdb](https://developer.wordpress.org/reference/classes/wpdb/) class and are not affected by [PHP's error settings](http://www.php.net/errorfunc).
