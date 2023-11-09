@@ -194,8 +194,8 @@ White screens and PHP error messages are not displayed to users any more. But in
 
 ```
 define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_DISPLAY', true );
+define( 'WP_DEBUG', false);
+define( 'WP_DEBUG_DISPLAY', false );
 ```
 
 ### WP_DEBUG {#wp-debug}
@@ -204,7 +204,7 @@ The [WP_DEBUG](https://developer.wordpress.org/advanced-administration/debug/deb
 
 ```
 define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false);
 ```
 
 [Database errors are printed only if WP_DEBUG is set to true](https://trac.wordpress.org/ticket/5473). Database errors are handled by the [wpdb](https://developer.wordpress.org/reference/classes/wpdb/) class and are not affected by [PHP's error settings](http://www.php.net/errorfunc).
@@ -267,9 +267,9 @@ Obviously, you will want different settings for your development environment. If
 @ini_set( 'log_errors', 'Off' );
 @ini_set( 'display_errors', 'On' );
 define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true ); // 5.2 and later
-define( 'WP_DEBUG', true );
+define( 'WP_DEBUG', false);
 define( 'WP_DEBUG_LOG', false );
-define( 'WP_DEBUG_DISPLAY', true );
+define( 'WP_DEBUG_DISPLAY', false );
 ```
 
 Because `wp-config.php` is loaded for every page view not loaded from a cache file, it is an excellent location to set `php.ini` settings that control your PHP installation. This is useful if you don't have access to a `php.ini` file, or if you just want to change some settings on the fly. One exception is 'error_reporting'. When WP_DEBUG is defined as true, 'error_reporting' will be set to E_ALL by WordPress regardless of anything you try to set in wp-config.php. If you really have a need to set 'error_reporting' to something else, it must be done after `wp-settings.php` is loaded, such as in a plugin file.
@@ -307,9 +307,9 @@ A refined version from Mike Little on the [Manchester WordPress User Group](http
  * wp-content only when WP_DEBUG is true. if Apache does not have write permission,
  * you may need to create the file first and set the appropriate permissions (i.e. use 666).
  */
-define( 'WP_DEBUG', true ); // Or false
+define( 'WP_DEBUG', false ); // Or false
 if ( WP_DEBUG ) {
-	define( 'WP_DEBUG_LOG', true );
+	define( 'WP_DEBUG_LOG', false);
 	define( 'WP_DEBUG_DISPLAY', false );
 	@ini_set( 'display_errors', 0 );
 }
